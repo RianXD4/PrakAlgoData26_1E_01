@@ -19,7 +19,7 @@ From Deklarasi Class to Tugas 2.
 
 * How to run the program.
 Tidak bisa di compile dikarenakan tidak ada method Main
-* Output
+* Output\
 ![Tidak bisa compile](img/Mahasiswa01.png)
 ![Tidak ada file class](img/Mahasiswa01B.png)
 
