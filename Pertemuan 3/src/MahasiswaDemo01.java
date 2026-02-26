@@ -18,16 +18,12 @@ public class MahasiswaDemo01 {
             dummy = Rian.nextLine();
             arraayofMahasiswa[i].ipk = Float.parseFloat(dummy);
             System.out.println("------------------------------------------------");
-        }
-
+        }   
         for (int i = 0; i < arraayofMahasiswa.length; i++) {
-            System.out.println("NIM\t: "+arraayofMahasiswa[i].nim);
-            System.out.println("NAMA\t: "+arraayofMahasiswa[i].nama);
-            System.out.println("KELAS\t: "+arraayofMahasiswa[i].kelas);
-            System.out.println("IPK\t: "+arraayofMahasiswa[i].ipk);
-            System.out.println("------------------------------------------------");
-
+            arraayofMahasiswa[i].cetakinfo();
         }
+
+        
         Rian.close();
     }
 }
