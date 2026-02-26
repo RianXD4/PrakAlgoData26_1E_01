@@ -24,7 +24,7 @@ public class MahasiswaDemo01 {
             System.out.println("NAMA\t: "+arraayofMahasiswa[i].nama);
             System.out.println("KELAS\t: "+arraayofMahasiswa[i].kelas);
             System.out.println("IPK\t: "+arraayofMahasiswa[i].ipk);
-            System.out.println("-------------------------------------------------");
+            System.out.println("------------------------------------------------");
 
         }
     }
