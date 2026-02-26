@@ -3,5 +3,5 @@ public class Mahasiswa01 {
     String nama;
     String kelas;
     float ipk;
-    
+       
 }
