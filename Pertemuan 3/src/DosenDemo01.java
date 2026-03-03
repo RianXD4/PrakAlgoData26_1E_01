@@ -29,13 +29,11 @@ public class DosenDemo01 {
             arrayDsn[i] = new Dosen01(kode, nama, jenisKelamin, usia);
             System.out.println("--------------------------------------------------------");
         }
-        for (Dosen01 dum : arrayDsn) {
-            System.out.println("\tData Dosen");
-            System.out.println("Kode\t: "+dum.kode);
-            System.out.println("Nama\t: "+dum.nama);
-            System.out.println("Jenis Kelamin\t: "+ ((dum.jenisKelamin)?"Laki-Laki":"Perempuan"));
-            System.out.println("Usia\t: "+dum.usia);
-            System.out.println("--------------------------------------------------------");
-        }
+        DataDosen01.dataSemuaDosen(arrayDsn);
+        DataDosen01.infoDosenPalingMuda(arrayDsn);
+        DataDosen01.infoDosenPalingTua(arrayDsn);
+        DataDosen01.jumlahDosenPerJenisKelamin(arrayDsn);
+        DataDosen01.rerataUsiaDosenPerJenisKelamin(arrayDsn);
+        Rian.close();
     }
 }
