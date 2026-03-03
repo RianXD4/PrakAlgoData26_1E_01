@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class MatakuliahDemo01 {
     public static void main(String[] args) {
         Scanner Rian = new Scanner(System.in);
-        Matakuliah01[] arrayOfMatakuliah = new Matakuliah01[3];
+        System.out.print("Jumlah Matakuliah: ");
+        int n = Rian.nextInt();
+        Matakuliah01[] arrayOfMatakuliah = new Matakuliah01[n];
 
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
             System.out.println("Masukkan data Matakuliah ke-"+(i+1));
