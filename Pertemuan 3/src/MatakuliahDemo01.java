@@ -12,12 +12,8 @@ public class MatakuliahDemo01 {
         }
 
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
-            System.out.println("Data Matakuliah Ke-"+(i+1));
-            System.out.println("Kode\t: "+arrayOfMatakuliah[i].kode);
-            System.out.println("Nama\t: "+arrayOfMatakuliah[i].nama);
-            System.out.println("Sks\t: "+arrayOfMatakuliah[i].sks);
-            System.out.println("Jumlah Jam\t: "+arrayOfMatakuliah[i].jumlahJam);
-            System.out.println("--------------------------------------------------");
+        System.out.println("Data Matakuliah Ke-"+(i+1));
+        arrayOfMatakuliah[i].cetakInfo();
         }
         Rian.close();
         

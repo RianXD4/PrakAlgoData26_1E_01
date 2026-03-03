@@ -32,4 +32,12 @@ public class Matakuliah01 {
         jumlahJam = Integer.parseInt(dummy);
         System.out.println("--------------------------------------------------");
     }
+
+    void cetakInfo(){
+            System.out.println("Kode\t: "+kode);
+            System.out.println("Nama\t: "+nama);
+            System.out.println("Sks\t: "+sks);
+            System.out.println("Jumlah Jam\t: "+jumlahJam);
+            System.out.println("--------------------------------------------------");
+    }
 }
