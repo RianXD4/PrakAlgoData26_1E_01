@@ -15,16 +15,16 @@ public class MahasiswaDemo01 {
             String kls = Rian.nextLine();
             System.out.print("IPK: ");
             Double ipk = Rian.nextDouble();
+            Rian.nextLine();
             arr[i-1] = new Mahasiswa01(nim, nama, kls, ipk);
         }
         for (int i = 0; i < arr.length; i++) {
-            list.tambah(arr[0]);
+            list.tambah(arr[i]);
         }
 
-        System.out.println("Data mahasiswa sebelum sorting: ");
+        System.out.println("Data mahasiswa setelah sorting menggunakan SELECTION SORT (ASC)");
+        list.selectionSort();
         list.tampil();
-        System.out.println("Data mahasiswa setelah sorting berdasarkan IPK (DESC) : ");
-        list.bubblesor();
-        list.tampil();
+        Rian.close();
     }
 }
