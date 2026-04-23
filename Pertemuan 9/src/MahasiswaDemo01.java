@@ -11,6 +11,7 @@ public class MahasiswaDemo01 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas teratas");
             System.out.println("4. Melihat daftar Tugas");
+            System.out.println("5. Melihat Tugas Terbawah");
             System.out.print("Pilih: ");
             pilih = Rian.nextInt();
             Rian.nextLine();
@@ -47,6 +48,12 @@ public class MahasiswaDemo01 {
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
                     break;
+                case 5:
+                    Mahasiswa01 lihat1 = stack.peekBottom();
+                    if (lihat1 != null) {
+                        System.out.println("Tugas pertama dikumpulkan oleh "+ lihat1.nama);
+                    }
+                break;
                 default:
                     System.out.println("Pilihan tidak valid");
                     break;
