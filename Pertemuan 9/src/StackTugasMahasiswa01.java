@@ -70,5 +70,9 @@ public class StackTugasMahasiswa01 {
         System.out.println("");
     }
 
+    public int countFilled(){
+        return top+1;
+    }
+
     
 }
