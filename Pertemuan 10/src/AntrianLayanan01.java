@@ -101,5 +101,12 @@ public int getJumlahAntrian(){
     return size;
 }
 
-
+public void LihatAkhir(){
+    if (isEmpty()) {
+        System.out.println("Queue Kosong");
+    } else {
+        System.out.println("Mahasiswa Antrian paling belakang: ");
+        data[rear].tampilkanData();
+    }
+}
 }
