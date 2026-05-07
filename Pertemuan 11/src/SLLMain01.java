@@ -13,6 +13,15 @@ public class SLLMain01 {
         sll.insertAfter(sll.head.data.nama, mhs3);
         sll.insertAt(2, mhs2);
         sll.print();
+        System.out.println("data index 1 : ");
+        sll.getData(1);
+        System.out.println("Data mahasiswa an Tony berada pada index: "+sll.indexOf("Tony"));
+        System.out.println();
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
+        sll.print();
 
      }
 }
