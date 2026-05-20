@@ -1,9 +1,9 @@
-public class DoubleLinkedList01 {
+public class doubleLinkedList01 {
     Node01 head;
     Node01 tail;
     int size;
 
-    public DoubleLinkedList01(){
+    public doubleLinkedList01(){
         head = null;
         tail = null;
         size = 0;

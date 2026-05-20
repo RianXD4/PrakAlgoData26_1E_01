@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class DoubleLinkedListMain {
     public static void main(String[] args) {
         Scanner Rian = new Scanner(System.in);
-        DoubleLinkedList01 list = new DoubleLinkedList01();
+        doubleLinkedList01 list = new doubleLinkedList01();
         int p;
         do {
             System.out.println("\n==== MENU DOUBLE LINKED LIST ====");
