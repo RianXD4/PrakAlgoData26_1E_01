@@ -39,6 +39,15 @@ public class BinaryTreeMain01 {
         System.out.println("\nDaftar semua mahasiswa setelah penghapusan 1 mahasiswa (in order traversal):");
         bst.traverseInOrder(bst.root);
 
+        System.out.println("\nDaftar Mahasiswa dengan ipk diatas 3.50");
+        bst.tampilMahasiswaIPKdiAtas(bst.root, 3.50);
+
+        System.out.println("\nMahasiswa IPK tertinggi");
+        (bst.getMinIPK()).mahasiswa.tampilInformasi();
+
+        System.out.println("\nMahasiswa IPK terendah");
+        (bst.getMaxIPK()).mahasiswa.tampilInformasi();
+
 
 
         BinaryTreeArray01 bta = new BinaryTreeArray01();
@@ -57,5 +66,10 @@ public class BinaryTreeMain01 {
         bta.populateData(dataMahasiswas, idxLast);
         System.out.println("\nInorder Traversal Mahasiswa: ");
         bta.traverseInOrder(0);
+        Mahasiswa01 mhs8 = new Mahasiswa01("244160170", "Faza", "B", 3.92);
+        System.out.println("\nMenambahkan 1 lagi Mahasiswa");
+        bta.add(mhs8);
+        System.out.println("\nPre Order Traversal Mahasiswa");
+        bta.traversePreOrder(0);
     }
 }
