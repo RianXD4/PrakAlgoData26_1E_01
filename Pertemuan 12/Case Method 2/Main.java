@@ -5,6 +5,7 @@ public class Main{
         Scanner Rian = new Scanner(System.in);
         DoubleLinkedList01 listAnt = new DoubleLinkedList01();
         DoubleLinkedList02 listPesan = new DoubleLinkedList02();
+        LinkedListRekap listRekap = new LinkedListRekap();
         int p;
         do {
             System.out.println("===================================");
@@ -14,6 +15,7 @@ public class Main{
             System.out.println("2. Cetak Antrian");
             System.out.println("3. Hapus Antrian dan Pesan");
             System.out.println("4. Laporan Pesanan");
+            System.out.println("5. Print Rekap Pesanan");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             p = Rian.nextInt(); Rian.nextLine();
@@ -42,6 +44,8 @@ public class Main{
                         listPesan.addLast(psn);
                         System.out.println(listAnt.head.data.namaPembeli+" telah memesan "+namap);
                         listAnt.removeFirst();
+                        rekap01 rek = new rekap01(namap);
+                        listRekap.add(rek);
                     } else {
                         System.out.println("Antrian masih kosong");
                     }
@@ -49,6 +53,9 @@ public class Main{
                 case 4:
                     listPesan.sort();
                     listPesan.print();
+                    break;
+                case 5:
+                    listRekap.print();
                     break;
                 case 0:
                     System.out.println("Closing");

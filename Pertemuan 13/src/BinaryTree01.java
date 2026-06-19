@@ -1,16 +1,19 @@
 public class BinaryTree01 {
     Node01 root;
+    int size;
 
     public BinaryTree01() {
         root = null;
+        size = 0;
     }
 
     public boolean isEmpty() {
         return root == null;
     }
 
-    public void add(Mahasiswa01 mahasiswa) {
-        Node01 newNode = new Node01(mahasiswa);
+    public void add(Buku buku) { //modifikasi untuk menambahkan buku menggunakan tahun terbit
+        Node01 newNode = new Node01(buku);
+        size++; //size +1 saat menambahkan
         if (isEmpty()) {
             root = newNode;
         } else {
@@ -18,7 +21,7 @@ public class BinaryTree01 {
             Node01 parent = null;
             while (true) {
                 parent = current;
-                if (mahasiswa.ipk < current.mahasiswa.ipk) {
+                if (buku.tahunTerbit < current.buku.tahunTerbit) {
                     current = current.left;
                     if (current == null) {
                         parent.left = newNode;
@@ -35,14 +38,14 @@ public class BinaryTree01 {
         }
     }
 
-    public boolean find(double ipk) {
+    public boolean find(int tahunTerbit) { //Pencarian menggunakan Tahun Terbit
         boolean result = false;
         Node01 current = root;
         while (current != null) {
-            if (current.mahasiswa.ipk == ipk) {
+            if (current.buku.tahunTerbit == tahunTerbit) {
                 result = true;
                 break;
-            } else if (ipk > current.mahasiswa.ipk) {
+            } else if (tahunTerbit > current.buku.tahunTerbit) {
                 current = current.right;
             } else {
                 current = current.left;
@@ -53,16 +56,16 @@ public class BinaryTree01 {
 
     public void traversePreOrder(Node01 node) {
         if (node != null) {
-            node.mahasiswa.tampilInformasi();
+            node.buku.tampilInformasi();
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
     }
 
-    public void traverseInOrder(Node01 node) {
+    public void traverseInOrder(Node01 node) { //Menampilkan Buku dari tahun terbit terlama ke terbaru
         if (node != null) {
             traverseInOrder(node.left);
-            node.mahasiswa.tampilInformasi();
+            node.buku.tampilInformasi();
             traverseInOrder(node.right);
         }
     }
@@ -71,7 +74,7 @@ public class BinaryTree01 {
         if (node != null) {
             traversePostOrder(node.left);
             traversePostOrder(node.right);
-            node.mahasiswa.tampilInformasi();
+            node.buku.tampilInformasi();
         }
     }
 
@@ -89,7 +92,7 @@ public class BinaryTree01 {
         return successor;
     }
 
-    public void delete(double ipk) {
+    public void delete(int tahunTerbit) { //Modifikasi delete agar bisa menghapus dengan data buku
         if (isEmpty()) {
             System.out.println("Binary tree kosong");
             return;
@@ -100,13 +103,13 @@ public class BinaryTree01 {
         boolean isLeftChild = false;
 
         while (current != null) {
-            if (current.mahasiswa.ipk == ipk) {
+            if (current.buku.tahunTerbit == tahunTerbit) {
                 break;
-            } else if (ipk < current.mahasiswa.ipk) {
+            } else if (tahunTerbit < current.buku.tahunTerbit) { // IPK diganti menjadi Tahun Terbit
                 parent = current;
                 current = current.left;
                 isLeftChild = true;
-            } else if (ipk > current.mahasiswa.ipk) {
+            } else if (tahunTerbit > current.buku.tahunTerbit) {
                 parent = current;
                 current = current.right;
                 isLeftChild = false;
@@ -117,6 +120,7 @@ public class BinaryTree01 {
             System.out.println("Data tidak ditemukan");
             return;
         } else {
+            size--; //size -1 saat delete
             if (current.left == null && current.right == null) {
                 if (current == root) {
                     root = null;
@@ -152,8 +156,6 @@ public class BinaryTree01 {
             } 
             else {
                 Node01 successor = getSuccessor(current);
-                System.out.println("Jika 2 anak, current = ");
-                successor.mahasiswa.tampilInformasi();
                 if (current == root) {
                     root = successor;
                 } else {
@@ -168,7 +170,7 @@ public class BinaryTree01 {
         }
     }
 
-    public Node01 getMaxIPK(){
+    public Node01 getNewestBook(){
         if (isEmpty()) {
             System.out.println("Binary tree kosong");
             return null;
@@ -180,7 +182,7 @@ public class BinaryTree01 {
         return current;
     }
 
-     public Node01 getMinIPK(){
+     public Node01 getOldestBook(){
         if (isEmpty()) {
             System.out.println("Binary tree kosong");
             return null;
@@ -194,7 +196,7 @@ public class BinaryTree01 {
 
     public void addRekursif(Node01 current, Node01 add){
         Node01 parent = current;
-        if (add.mahasiswa.ipk < current.mahasiswa.ipk) {
+        if (add.buku.tahunTerbit < current.buku.tahunTerbit) {
             current = current.left;
             if (current == null) {
                 parent.left = add;
@@ -209,14 +211,18 @@ public class BinaryTree01 {
         }
     }
 
-   public void tampilMahasiswaIPKdiAtas(Node01 node, double ipk) {
+   public void tampilBukuDiatasTahun(Node01 node, int tahunTerbit) {
     if (node != null) {
-        tampilMahasiswaIPKdiAtas(node.left, ipk);
-        if (node.mahasiswa.ipk > ipk) {
-            node.mahasiswa.tampilInformasi();
+        tampilBukuDiatasTahun(node.left, tahunTerbit);
+        if (node.buku.tahunTerbit > tahunTerbit) {
+            node.buku.tampilInformasi();
         }
-        tampilMahasiswaIPKdiAtas(node.right, ipk);
+        tampilBukuDiatasTahun(node.right, tahunTerbit);
         }
+    }
+
+    public void countBuku(){ //Menampilkan jumlah buku dari jumlah size
+        System.out.println("Jumlah Buku yang ada: "+size);
     }
 
     
